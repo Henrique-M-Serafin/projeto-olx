@@ -1,0 +1,10 @@
+# Frontend
+dn-project-frontend/.next/
+dn-project-frontend/node_modules/
+
+# Backend
+dn-project-backend/bin/
+dn-project-backend/*.exe
+
+# Geral
+.env
