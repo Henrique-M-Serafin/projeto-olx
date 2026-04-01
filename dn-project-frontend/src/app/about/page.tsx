@@ -64,15 +64,19 @@ const AboutPage = () => {
                                 userListings.map((listing: Listing) => (
                                     <div key={listing.ID} className="relative rounded-xl overflow-hidden cursor-pointer group h-36">
                                         {listing.listing_photos?.[0]?.url && (
-                                            <Image
-                                                src={listing.listing_photos[0].url}
-                                                alt={listing.title}
-                                                fill
-                                                className="object-cover"
-                                            />
+                                            <Link href={`/anuncios/${listing.ID}`} key={listing.ID}>
+                                                <Image
+                                                    src={listing.listing_photos[0].url}
+                                                    alt={listing.title}
+                                                    fill
+                                                    className="object-cover"
+                                                />
+                                            </Link>
                                         )}
                                         <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-2">
-                                            <p className="text-xs font-medium text-white truncate">{listing.title}</p>
+                                            <Link href={`/anuncios/${listing.ID}`}>
+                                                <p className="text-xs font-medium truncate">{listing.title}</p>
+                                            </Link>
                                         </div>
                                     </div>
                                 ))
